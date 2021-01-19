@@ -69,6 +69,11 @@ $app->configure('auth');
 $app->configure('cors');
 $app->configure('activitylog');
 $app->configure('logging');
+$app->configure('mail');
+
+$app->alias('mailer', Illuminate\Mail\Mailer::class);
+$app->alias('mailer', Illuminate\Contracts\Mail\Mailer::class);
+$app->alias('mailer', Illuminate\Contracts\Mail\MailQueue::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -111,6 +116,7 @@ $app->register(\Thedevsaddam\LumenRouteList\LumenRouteListServiceProvider::class
 $app->register(Fruitcake\Cors\CorsServiceProvider::class);
 $app->register(\danielme85\LaravelLogToDB\ServiceProvider::class);
 $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
+$app->register(Illuminate\Mail\MailServiceProvider::class);
 
 LumenPassport::tokensExpireIn(Carbon::now()->addYears(1));
 

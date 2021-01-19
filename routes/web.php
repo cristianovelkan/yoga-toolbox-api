@@ -14,5 +14,5 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return trans('validation.custom.test');
 });

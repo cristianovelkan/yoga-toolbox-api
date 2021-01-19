@@ -13,6 +13,4 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return trans('validation.custom.test');
-});
+$router->post('/register', 'RegisterController@register');

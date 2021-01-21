@@ -7,7 +7,6 @@ return [
     | System Messages
     |--------------------------------------------------------------------------
     */
-
     'register' => [
         'error' => 'Houve um erro na tentativa de registro, tente novamente mais tarde.',
         'success' => 'Sua Conta foi criada com sucesso.',
@@ -28,6 +27,8 @@ return [
         'success' => 'Sua senha foi criada com sucesso.',
         'mail_token_invalid' => 'O token enviado é inválido.'
     ],
-    'unauthorized' => 'Acesso Não Autorizado.'
-
+    'unauthorized' => 'Acesso Não Autorizado.',
+    'created_success' => 'Criado com Sucesso.',
+    'updated_success' => 'Atualizado com Sucesso.',
+    'deleted_success' => 'Excluído com Sucesso.',
 ];

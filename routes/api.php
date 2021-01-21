@@ -22,6 +22,12 @@ $router->post('/reset-password', 'AuthController@resetPassword');
 
 $router->group(['middleware' => 'auth:api'], function ($router) {
     $router->group(['middleware' => 'localization'], function ($router) {
+
+        $router->group(['middleware' => 'admin'], function ($router) {
+            //admin routes
+        });
+
+
         $router->post('/logout', 'AuthController@logout');
     });
 });

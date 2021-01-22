@@ -7,3 +7,4 @@ Homestead.yaml
 .editorconfig
 storage/oauth-private.key
 storage/oauth-public.key
+.history

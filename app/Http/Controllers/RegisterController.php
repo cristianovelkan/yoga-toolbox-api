@@ -64,9 +64,7 @@ class RegisterController extends Controller
             $user->is_verified = true;
             $user->save();
 
-            return response([
-                'message' => trans('messages.register.confirm')
-            ], Response::HTTP_OK);
+            return redirect(env('APP_FRONT') . '?confirm=success');
         } catch (Exception $e) {
             return response([
                 'message' => $e->getMessage()

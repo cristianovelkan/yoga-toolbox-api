@@ -22,7 +22,6 @@ class UserConfirmationMail extends Mailable
         $this->url = $url;
         $this->user = $user;
         $this->subject = trans('mail.user_confirmation.subject') . ' - ' . env('APP_NAME');
-
     }
 
     /**

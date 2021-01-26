@@ -44,6 +44,8 @@ $router->group(['middleware' => 'auth:api'], function ($router) {
                 $router->get('/{id}', 'RedeemCodeController@show');
                 $router->put('/{id}', 'RedeemCodeController@update');
                 $router->delete('/{id}', 'RedeemCodeController@destroy');
+
+                $router->post('/import', 'RedeemCodeController@import');
             });
 
             $router->group(['prefix' => 'media'], function ($router) {

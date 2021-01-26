@@ -28,6 +28,7 @@ $router->group(['middleware' => 'auth:api'], function ($router) {
             $router->group(['prefix' => 'categories'], function ($router) {
                 $router->get('/colors', 'CategoryController@colors');
                 $router->get('/array', 'CategoryController@arrayList');
+                $router->get('/grouped', 'CategoryController@groupedList');
 
                 $router->get('/', 'CategoryController@index');
                 $router->post('/', 'CategoryController@store');
@@ -43,6 +44,17 @@ $router->group(['middleware' => 'auth:api'], function ($router) {
                 $router->get('/{id}', 'RedeemCodeController@show');
                 $router->put('/{id}', 'RedeemCodeController@update');
                 $router->delete('/{id}', 'RedeemCodeController@destroy');
+            });
+
+            $router->group(['prefix' => 'media'], function ($router) {
+                $router->get('/types', 'MediaController@types');
+
+                $router->get('/', 'MediaController@index');
+                $router->post('/', 'MediaController@store');
+                $router->get('/{id}', 'MediaController@show');
+                $router->put('/{id}', 'MediaController@update');
+                $router->delete('/{id}', 'MediaController@destroy');
+                $router->patch('/{id}', 'MediaController@restore');
             });
         });
 
